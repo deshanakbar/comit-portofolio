@@ -1,77 +1,512 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Saya</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: #f1f5f9;
-            color: #1e293b;
-            text-align: center;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080d18">
+  <title>Portofolio | Mahasiswa Sistem Informasi</title>
 
-        header {
-            background: #1d4ed8;
-            color: white;
-            padding: 40px 20px;
-        }
+  <style>
+    :root {
+      --bg: #080d18;
+      --panel: #101827;
+      --text: #f1f5f9;
+      --muted: #9ba9bd;
+      --blue: #60a5fa;
+      --cyan: #67e8f9;
+      --border: #253247;
+    }
 
-        section {
-            background: white;
-            margin: 20px auto;
-            padding: 25px;
-            max-width: 600px;
-            border-radius: 12px;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
-        h2 {
-            color: #1d4ed8;
-        }
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
 
-        a {
-            display: inline-block;
-            background: #1d4ed8;
-            color: white;
-            padding: 12px 20px;
-            text-decoration: none;
-            border-radius: 8px;
-        }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-        footer {
-            padding: 20px;
-            color: #64748b;
-        }
-    </style>
+    .container {
+      width: min(1080px, 90%);
+      margin: auto;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(8, 13, 24, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      min-height: 70px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .logo span,
+    .accent {
+      color: var(--cyan);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--cyan);
+    }
+
+    .hero {
+      min-height: 590px;
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      align-items: center;
+      gap: 45px;
+      padding-top: 75px;
+      padding-bottom: 75px;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 7px 13px;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      color: var(--cyan);
+      font-size: 0.83rem;
+      margin-bottom: 22px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #4ade80;
+      box-shadow: 0 0 12px #4ade80;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4.6rem);
+      line-height: 1.12;
+      letter-spacing: -2px;
+      margin-bottom: 22px;
+    }
+
+    .hero p,
+    .section-intro {
+      color: var(--muted);
+      max-width: 580px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 11px 18px;
+      border-radius: 9px;
+      border: 1px solid var(--border);
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .button.primary {
+      background: var(--blue);
+      color: #08111f;
+      border-color: var(--blue);
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+    }
+
+    .terminal {
+      padding: 23px;
+      background: linear-gradient(145deg, #131e30, #0c1321);
+      border: 1px solid var(--border);
+      border-radius: 17px;
+      box-shadow: 0 20px 60px #0004;
+      overflow-wrap: anywhere;
+    }
+
+    .terminal-top {
+      display: flex;
+      gap: 7px;
+      margin-bottom: 25px;
+    }
+
+    .terminal-top span {
+      width: 10px;
+      height: 10px;
+      background: #64748b;
+      border-radius: 50%;
+    }
+
+    .terminal pre {
+      white-space: pre-wrap;
+      font: 0.9rem/2 monospace;
+      color: #cbd5e1;
+    }
+
+    .terminal .code-blue {
+      color: var(--cyan);
+    }
+
+    section.content-section {
+      padding-top: 85px;
+      padding-bottom: 35px;
+      scroll-margin-top: 75px;
+    }
+
+    .section-number {
+      color: var(--cyan);
+      font: 0.9rem monospace;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      margin-bottom: 12px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 22px;
+      margin-top: 28px;
+    }
+
+    .card {
+      padding: 25px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    .card p {
+      color: var(--muted);
+    }
+
+    .facts {
+      display: grid;
+      gap: 15px;
+    }
+
+    .fact {
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .fact:last-child {
+      border: none;
+      padding-bottom: 0;
+    }
+
+    .fact strong {
+      display: block;
+      color: var(--cyan);
+      font-size: 0.85rem;
+    }
+
+    .skills-grid,
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .skill-icon {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+
+    .card h3 {
+      margin-bottom: 8px;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      color: var(--cyan);
+      background: #163044;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+
+    .project-link {
+      display: inline-block;
+      margin-top: 15px;
+      color: var(--cyan);
+      font-weight: bold;
+    }
+
+    .contact {
+      margin-top: 28px;
+      text-align: center;
+      padding: 45px 24px;
+      background: radial-gradient(ellipse at top, #173052, var(--panel) 70%);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+    }
+
+    .contact p {
+      color: var(--muted);
+      margin: 10px auto 20px;
+    }
+
+    footer {
+      margin-top: 75px;
+      padding: 25px 0;
+      text-align: center;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 720px) {
+      .nav-inner {
+        padding: 14px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        gap: 14px;
+        font-size: 0.82rem;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        gap: 30px;
+        padding-top: 65px;
+      }
+
+      .about-grid,
+      .skills-grid,
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        letter-spacing: -1px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-    <header>
-        <h1>Kenalin, Aku Mahasiswa Sistem Informasi!</h1>
-        <p>Ini adalah perjalanan pertama saya sama COMIT.</p>
+  <nav>
+    <div class="container nav-inner">
+      <a class="logo" href="#home">My<span>.</span>Portfolio</a>
+
+      <div class="nav-links">
+        <a href="#about">Tentang</a>
+        <a href="#skills">Keahlian</a>
+        <a href="#projects">Proyek</a>
+        <a href="#contact">Kontak</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <header class="container hero" id="home">
+      <div>
+        <div class="status">
+          <span class="dot"></span>
+          Sedang belajar dan berkembang
+        </div>
+
+        <h1>Halo, saya <span class="accent">Mahasiswa SI.</span></h1>
+
+        <p>
+          Saya sedang mempelajari pemrograman, pengembangan website,
+          dan teknologi informasi. Saya percaya bahwa kemampuan besar
+          dimulai dari proyek kecil yang dikerjakan dengan konsisten.
+        </p>
+
+        <div class="buttons">
+          <a class="button primary" href="#projects">Lihat Proyek ↗</a>
+          <a class="button" href="#contact">Tentang & Kontak</a>
+        </div>
+      </div>
+
+      <div class="terminal">
+        <div class="terminal-top">
+          <span></span><span></span><span></span>
+        </div>
+        <pre><span class="code-blue">const</span> developer = {
+  nama: "Mahasiswa SI",
+  fokus: [
+    "Web Development",
+    "Programming",
+    "Problem Solving"
+  ],
+  belajar: true,
+  semangat: "Terus berkembang"
+};
+
+console.log("Hello, world!");</pre>
+      </div>
     </header>
 
-    <section>
-        <h2>Tentang Saya</h2>
-        <p>Saya sedang belajar pemrograman dan pengembangan website.</p>
+    <section class="container content-section" id="about">
+      <div class="section-number">01 / TENTANG</div>
+      <h2>Mengenal Saya</h2>
+      <p class="section-intro">
+        Saya adalah mahasiswa Sistem Informasi yang tertarik
+        menggabungkan teknologi, logika, dan pemecahan masalah.
+      </p>
+
+      <div class="about-grid">
+        <div class="card">
+          <h3>Perjalanan Saya</h3>
+          <p>
+            Saat ini saya sedang membangun dasar dalam pemrograman
+            dan pengembangan website. Saya juga belajar menggunakan
+            Git dan GitHub untuk mengelola proyek serta membagikan
+            hasil karya secara online.
+          </p>
+        </div>
+
+        <div class="card facts">
+          <div class="fact">
+            <strong>STATUS</strong>
+            Mahasiswa Sistem Informasi
+          </div>
+          <div class="fact">
+            <strong>FOKUS</strong>
+            Programming & Web
+          </div>
+          <div class="fact">
+            <strong>PRINSIP</strong>
+            Belajar, mencoba, memperbaiki
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section>
-        <h2>Keahlian</h2>
-        <p>HTML, CSS, Git, dan GitHub</p>
+    <section class="container content-section" id="skills">
+      <div class="section-number">02 / KEAHLIAN</div>
+      <h2>Yang Sedang Saya Pelajari</h2>
+      <p class="section-intro">
+        Kumpulan keterampilan yang sedang saya kembangkan
+        melalui latihan dan proyek sederhana.
+      </p>
+
+      <div class="skills-grid">
+        <article class="card">
+          <div class="skill-icon">🌐</div>
+          <h3>Web Development</h3>
+          <p>HTML dan CSS untuk membangun tampilan website yang responsif.</p>
+        </article>
+
+        <article class="card">
+          <div class="skill-icon">💻</div>
+          <h3>Programming</h3>
+          <p>Belajar logika algoritma dan Python untuk memecahkan masalah.</p>
+        </article>
+
+        <article class="card">
+          <div class="skill-icon">🔧</div>
+          <h3>Git & GitHub</h3>
+          <p>Mengelola perubahan kode, repository, commit, dan deployment.</p>
+        </article>
+
+        <article class="card">
+          <div class="skill-icon">🧠</div>
+          <h3>Problem Solving</h3>
+          <p>Melatih cara berpikir logis, sistematis, dan teliti.</p>
+        </article>
+      </div>
     </section>
 
-    <section>
-        <h2>Proyek Saya</h2>
-        <p>Ini adalah website pertama yang saya buat.</p>
-        <a href="https://github.com/">Kunjungi GitHub</a>
+    <section class="container content-section" id="projects">
+      <div class="section-number">03 / PROYEK</div>
+      <h2>Proyek Pilihan</h2>
+      <p class="section-intro">
+        Beberapa proyek latihan untuk membangun pengalaman.
+      </p>
+
+      <div class="projects-grid">
+        <article class="card">
+          <span class="tag">HTML + CSS</span>
+          <h3>Website Portofolio</h3>
+          <p>
+            Website pribadi untuk memperkenalkan profil,
+            keterampilan, dan proyek yang sedang dikerjakan.
+          </p>
+          <a class="project-link" href="#home">Lihat halaman ↑</a>
+        </article>
+
+        <article class="card">
+          <span class="tag">Python</span>
+          <h3>Program Perhitungan</h3>
+          <p>
+            Program latihan untuk menerapkan variabel,
+            input, fungsi, dan operasi matematika.
+          </p>
+          <span class="project-link">Proyek latihan</span>
+        </article>
+      </div>
     </section>
 
-    <footer>
-        <p>© 2026 Portofolio Saya</p>
-    </footer>
+    <section class="container content-section" id="contact">
+      <div class="section-number">04 / KONTAK</div>
+
+      <div class="contact">
+        <h2>Mari Terhubung.</h2>
+        <p>
+          Saya terbuka untuk belajar bersama, berbagi ide,
+          dan berkolaborasi dalam proyek teknologi.
+        </p>
+
+        <!-- Ganti alamat email di bawah dengan email milikmu -->
+        <a class="button primary"
+           href="mailto:emailkamu@example.com">
+          Hubungi Saya ↗
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 Portofolio Saya · Dibuat dengan HTML, CSS, dan semangat belajar.
+    </div>
+  </footer>
 
 </body>
 </html>
