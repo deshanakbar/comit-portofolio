@@ -3,252 +3,245 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portofolio Deshan, mahasiswa Sistem Informasi yang sedang belajar pemrograman.">
+  <meta name="theme-color" content="#090b10">
+  <meta name="description" content="Personal portfolio and developer journey">
   <title>Deshan | Developer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
-<body id="top">
-  <div id="intro-screen" class="intro-screen">
-  <div class="intro-window">
-    <div class="editor-heading">
-      <div class="window-dots">
-        <span class="dot red"></span>
-        <span class="dot yellow"></span>
-        <span class="dot green"></span>
-      </div>
-      <span>initializing_developer.exe</span>
-    </div>
 
-    <div class="intro-content">
-      <p class="comment">// Initializing developer portfolio...</p>
-      <h1 id="intro-title">Hello, Developer.</h1>
-      <p id="intro-subtitle">Preparing development environment</p>
-
-      <div class="intro-code">
-        <span class="terminal-user">visitor@portfolio:~$</span>
-        <span id="intro-language">Loading HTML...</span>
-        <span class="cursor">_</span>
-      </div>
-
-      <div class="progress-track">
-        <div id="intro-progress"></div>
-      </div>
-
-      <p class="comment" id="intro-status">Loading modules...</p>
-      <button id="skip-intro" type="button">Skip Intro →</button>
+<body>
+  <!-- INTRO PEMBUKA -->
+  <div class="intro" id="intro">
+    <div class="intro-box">
+      <div class="window-dots"><i></i><i></i><i></i><span>portfolio.exe</span></div>
+      <p class="eyebrow">INITIALIZING EXPERIENCE</p>
+      <h1 id="introTitle">Hello, World!</h1>
+      <p id="introStatus">Preparing your experience...</p>
+      <div class="progress"><span id="progressBar"></span></div>
+      <button id="skipIntro" type="button">Skip intro ↗</button>
     </div>
   </div>
-</div>
-  <header class="topbar">
-    <div class="window-dots">
-      <span class="dot red"></span>
-      <span class="dot yellow"></span>
-      <span class="dot green"></span>
-    </div>
-    <div class="file-title"><span class="blue">◆</span> id / home.tsx</div>
-    <div class="top-actions">
-      <select id="languageSelect" class="small-btn" aria-label="Pilih bahasa">
-  <option value="id">🌐 Bahasa Indonesia</option>
-  <option value="en">🌐 English</option>
-  <option value="ja">🌐 日本語</option>
-  <option value="ko">🌐 한국어</option>
-  <option value="es">🌐 Español</option>
-</select>
-      <button id="themeBtn" class="small-btn" type="button" aria-label="Ganti tema">☼</button>
+
+  <!-- NAVIGASI -->
+  <header class="navbar">
+    <a class="logo" href="#home">&lt;deshan<span>.dev</span> /&gt;</a>
+    <nav>
+      <a href="#about" data-i18n="navAbout">Tentang</a>
+      <a href="#skills" data-i18n="navSkills">Keahlian</a>
+      <a href="#projects" data-i18n="navProjects">Proyek</a>
+      <a href="#contact" data-i18n="navContact">Kontak</a>
+    </nav>
+    <div class="nav-tools">
+      <select id="languageSelect" aria-label="Language">
+        <option value="id">ID</option>
+        <option value="en">EN</option>
+        <option value="ja">日本語</option>
+        <option value="ko">한국어</option>
+        <option value="es">ES</option>
+      </select>
+      <button id="themeButton" class="square-button" type="button" aria-label="Change theme">☼</button>
     </div>
   </header>
 
-  <main class="container">
-    <section class="hero reveal">
-      <p class="comment">// File: src/home.tsx</p>
-      <h1 id="greeting">Halo, saya Deshan</h1>
-      <h2 id="role">Mahasiswa Sistem Informasi</h2>
-      <p class="intro" id="intro">
-        Saya sedang mempelajari pemrograman dan pengembangan website.
-        Saya tertarik membangun sesuatu yang bermanfaat, memecahkan masalah,
-        dan terus belajar teknologi baru.
-      </p>
-
-      <div class="terminal">
-        <span class="terminal-user">deshan@dev:~$</span>
-        <span>whoami</span>
-        <span class="arrow">→</span>
-        <span class="terminal-output">Mahasiswa Sistem Informasi</span>
-      </div>
-
-      <div class="socials">
-        <a class="social primary" href="https://github.com/" target="_blank" rel="noopener noreferrer">
-          <span>⌘</span> GitHub
-        </a>
-        <a class="social" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">in</a>
-        <a class="social instagram" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">◎</a>
-        <a class="social" href="mailto:emailkamu@example.com" aria-label="Email">✉</a>
-      </div>
-    </section>
-
-    <section class="editor-card photo-card reveal">
-      <div class="editor-heading">
-        <div class="window-dots">
-          <span class="dot red"></span>
-          <span class="dot yellow"></span>
-          <span class="dot green"></span>
+  <main>
+    <!-- HERO / FOTO PROFIL -->
+    <section class="hero wrap" id="home">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span class="green-dot"></span> STUDENT · ASPIRING DEVELOPER</p>
+        <h1 data-i18n="heroTitle">Membangun ide menjadi sesuatu yang <span class="gradient">berarti.</span></h1>
+        <p class="muted hero-description" data-i18n="heroText">
+          Saya mahasiswa Sistem Informasi yang sedang belajar pemrograman, web development, dan teknologi digital.
+        </p>
+        <div class="hero-buttons">
+          <a class="button primary" href="#projects" data-i18n="viewProjects">Lihat proyek ↗</a>
+          <a class="button secondary" href="#contact" data-i18n="contactMe">Hubungi saya</a>
         </div>
-        <span>Deshan.png</span>
-      </div>
-      <div class="photo-frame">
-        <img src="assets/profile.jpg" alt="Foto profil Deshan"
-             onerror="this.style.display='none';document.getElementById('photoFallback').style.display='grid'">
-        <div class="photo-fallback" id="photoFallback">
-          <span>👨‍💻</span>
-          <strong>Foto profil kamu</strong>
-          <small>Ganti dengan assets/profile.jpg</small>
+        <div class="hero-facts">
+          <span>⌖ Indonesia</span>
+          <span>⌘ <span data-i18n="learning">Belajar setiap hari</span></span>
         </div>
       </div>
-    </section>
 
-    <section class="editor-card manifesto reveal" id="about">
-      <div class="editor-heading">
-        <div class="window-dots">
-          <span class="dot red"></span>
-          <span class="dot yellow"></span>
-          <span class="dot green"></span>
-        </div>
-        <span>manifesto.md</span>
-        <span class="blue heading-right">✧ Scroll Reveal</span>
-      </div>
-      <div class="editor-content">
-        <p class="comment">↓ // Gulir layar untuk menyalakan manifesto</p>
-        <p class="blue">[Sticky Focus]</p>
-        <h2 class="manifesto-text">
-          Halo, saya <span class="blue">Deshan</span>. Seorang
-          mahasiswa Sistem Informasi yang sedang mengembangkan
-          kemampuan dalam <span class="blue">pemrograman</span>,
-          membangun aplikasi, dan mempelajari teknologi.
-          Saya percaya bahwa kode yang baik dapat membantu
-          memecahkan masalah nyata.
-        </h2>
-        <div class="status">
-          <p><span class="green-text">●</span> // Status: Sedang Belajar</p>
-          <p class="blue">Deshan • Information Systems</p>
-        </div>
-      </div>
-    </section>
-
-    <div class="scroll-pill reveal">
-      <span>⌁ Interactive Scroll Illumination</span>
-      <a href="#skills">Scroll Down ↓</a>
-    </div>
-
-    <section class="section reveal" id="skills">
-      <div class="section-heading">
-        <div>
-          <p class="comment">// Tech Stack & Ekosistem</p>
-          <h2>Teknologi yang Dipelajari</h2>
-        </div>
-        <span class="blue">Buka skills.json ›</span>
-      </div>
-
-      <div class="editor-card">
-        <div class="editor-heading">
-          <div class="window-dots">
-            <span class="dot red"></span>
-            <span class="dot yellow"></span>
-            <span class="dot green"></span>
+      <div class="profile-wrap reveal">
+        <div class="profile-glow"></div>
+        <div class="profile-card">
+          <div class="profile-top">
+            <span>profile.png</span>
+            <span class="green-dot"></span>
           </div>
-          <span>tech_stack_loop.json</span>
-          <span class="muted heading-right">hover untuk jeda</span>
-        </div>
 
-          <div class="tech-marquee">
+          <!-- GANTI URL FOTO DI BAWAH INI -->
+          <img
+            class="profile-photo"
+            src="assets/profile.jpg"
+            alt="Foto profil"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='grid';"
+          >
+          <div class="photo-fallback">YOUR<br>PHOTO</div>
+
+          <div class="profile-caption">
+            <div>
+              <h2>Deshan</h2>
+              <p data-i18n="profileRole">Mahasiswa Sistem Informasi</p>
+            </div>
+            <span class="verified-mark">↗</span>
+          </div>
+          <div class="profile-tags">
+            <span>Web Development</span><span>Programming</span>
+          </div>
+        </div>
+        <div class="floating-label label-one">{" "} console.log("Hello!")</div>
+        <div class="floating-label label-two"><span class="green-dot"></span> Always learning</div>
+      </div>
+
+      <a class="scroll-cue" href="#about">
+        <span class="scroll-line"></span>
+        <span data-i18n="scroll">GULIR UNTUK MENJELAJAH</span>
+        <span class="scroll-arrow">↓</span>
+      </a>
+    </section>
+
+    <!-- PEMUTAR MUSIK -->
+    <aside class="music-player" aria-label="Background music player">
+      <div class="music-cover">♫</div>
+      <div class="music-details">
+        <strong data-i18n="musicTitle">Background music</strong>
+        <span id="musicStatus" data-i18n="musicReady">Siap diputar</span>
+      </div>
+      <button id="musicButton" type="button" aria-label="Play music">▶</button>
+      <button id="muteButton" type="button" aria-label="Mute music">♪</button>
+
+      <!--
+        GANTI URL AUDIO INI DENGAN URL MP3 YANG BOLEH DIGUNAKAN.
+        Gunakan URL langsung ke file audio, bukan halaman YouTube.
+      -->
+      <audio id="backgroundMusic" loop preload="none">
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+      </audio>
+    </aside>
+
+    <!-- TENTANG -->
+    <section class="wrap section" id="about">
+      <div class="section-heading reveal">
+        <p class="eyebrow">01 / <span data-i18n="aboutLabel">PERKENALAN</span></p>
+        <h2 data-i18n="aboutTitle">Halo, ini cerita saya.</h2>
+        <p class="muted" data-i18n="aboutIntro">Sedang membangun kemampuan, satu proyek dalam satu waktu.</p>
+      </div>
+      <div class="about-grid">
+        <article class="info-card reveal">
+          <div class="info-icon">⌘</div>
+          <h3 data-i18n="aboutCardTitle">Belajar sambil membuat</h3>
+          <p class="muted" data-i18n="aboutText">Saya belajar dengan mencoba hal baru, membuat proyek kecil, menemukan kesalahan, lalu memperbaikinya.</p>
+        </article>
+        <article class="info-card reveal">
+          <div class="info-icon">◎</div>
+          <h3 data-i18n="goalTitle">Tujuan saya</h3>
+          <p class="muted" data-i18n="goalText">Mengembangkan kemampuan pemrograman dan membuat aplikasi yang bermanfaat bagi orang lain.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- KEAHLIAN BERGERAK -->
+    <section class="section skills-section" id="skills">
+      <div class="wrap section-heading reveal">
+        <p class="eyebrow">02 / <span data-i18n="skillsLabel">TEKNOLOGI</span></p>
+        <h2 data-i18n="skillsTitle">Teknologi yang saya jelajahi.</h2>
+        <p class="muted" data-i18n="skillsText">Daftar ini berkembang seiring proses belajar.</p>
+      </div>
+
+      <div class="marquee">
         <div class="tech-track">
-    <div class="tech-item"><span class="tech-icon">🌐</span><strong>HTML</strong><small>Markup</small></div>
-    <div class="tech-item"><span class="tech-icon">🎨</span><strong>CSS</strong><small>Styling</small></div>
-    <div class="tech-item"><span class="tech-icon">JS</span><strong>JavaScript</strong><small>Language</small></div>
-    <div class="tech-item"><span class="tech-icon">TS</span><strong>TypeScript</strong><small>Language</small></div>
-    <div class="tech-item"><span class="tech-icon">⚛</span><strong>React</strong><small>Frontend</small></div>
-    <div class="tech-item"><span class="tech-icon">▲</span><strong>Next.js</strong><small>Framework</small></div>
-    <div class="tech-item"><span class="tech-icon">🐍</span><strong>Python</strong><small>Language</small></div>
-    <div class="tech-item"><span class="tech-icon">☕</span><strong>Java</strong><small>Language</small></div>
-    <div class="tech-item"><span class="tech-icon">⌘</span><strong>Git</strong><small>Version Control</small></div>
-    <div class="tech-item"><span class="tech-icon">🐙</span><strong>GitHub</strong><small>Repository</small></div>
-    <div class="tech-item"><span class="tech-icon">🗄</span><strong>SQL</strong><small>Database</small></div>
-    <div class="tech-item"><span class="tech-icon">🐧</span><strong>Linux</strong><small>Operating System</small></div>
-  </div>
-</div>
+          <span class="tech"><b>5</b> HTML</span>
+          <span class="tech"><b>✳</b> CSS</span>
+          <span class="tech"><b>JS</b> JavaScript</span>
+          <span class="tech"><b>TS</b> TypeScript</span>
+          <span class="tech"><b>⚛</b> React</span>
+          <span class="tech"><b>N</b> Next.js</span>
+          <span class="tech"><b>Py</b> Python</span>
+          <span class="tech"><b>♨</b> Java</span>
+          <span class="tech"><b>PHP</b> PHP</span>
+          <span class="tech"><b>▤</b> SQL</span>
+          <span class="tech"><b>⑂</b> Git</span>
+          <span class="tech"><b>◉</b> GitHub</span>
+          <span class="tech"><b>🐧</b> Linux</span>
         </div>
-        <div class="editor-footer">// Teknologi yang sedang saya pelajari</div>
+      </div>
+      <p class="marquee-caption" data-i18n="marqueeText">Bergerak otomatis · Arahkan kursor untuk memperlambat</p>
+    </section>
+
+    <!-- PROYEK DENGAN GAMBAR -->
+    <section class="wrap section" id="projects">
+      <div class="section-heading reveal">
+        <p class="eyebrow">03 / <span data-i18n="workLabel">KARYA</span></p>
+        <h2 data-i18n="projectsTitle">Proyek pilihan.</h2>
+        <p class="muted" data-i18n="projectsText">Beberapa contoh kartu yang dapat kamu ganti dengan proyek sendiri.</p>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card reveal">
+          <!-- GANTI URL GAMBAR PROYEK PERTAMA -->
+          <img class="project-image" src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=900&q=85" alt="Kode program di layar" loading="lazy">
+          <div class="project-content">
+            <p class="eyebrow">01 / WEBSITE</p>
+            <h3 data-i18n="projectOne">Developer Portfolio</h3>
+            <p class="muted" data-i18n="projectOneText">Website untuk memperkenalkan profil, keahlian, dan hasil karya.</p>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+            <a href="#contact" class="project-link" data-i18n="projectLink">Lihat detail ↗</a>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <!-- GANTI URL GAMBAR PROYEK KEDUA -->
+          <img class="project-image" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=85" alt="Laptop dan perangkat kerja" loading="lazy">
+          <div class="project-content">
+            <p class="eyebrow">02 / PRODUCTIVITY</p>
+            <h3 data-i18n="projectTwo">Study Planner</h3>
+            <p class="muted" data-i18n="projectTwoText">Konsep aplikasi untuk mengatur jadwal belajar dan tugas.</p>
+            <div class="tags"><span>UI Design</span><span>JavaScript</span></div>
+            <a href="#contact" class="project-link" data-i18n="projectLink">Lihat detail ↗</a>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <!-- GANTI URL GAMBAR PROYEK KETIGA -->
+          <img class="project-image" src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=900&q=85" alt="Pemrograman di komputer" loading="lazy">
+          <div class="project-content">
+            <p class="eyebrow">03 / PROGRAMMING</p>
+            <h3 data-i18n="projectThree">Python Mini Apps</h3>
+            <p class="muted" data-i18n="projectThreeText">Program latihan untuk logika, fungsi, dan pengolahan data.</p>
+            <div class="tags"><span>Python</span><span>Logic</span></div>
+            <a href="#contact" class="project-link" data-i18n="projectLink">Lihat detail ↗</a>
+          </div>
+        </article>
+      </div>
+      <p class="muted note reveal" data-i18n="projectNote">Proyek dan gambar di atas hanya contoh. Ganti sesuai karya milikmu.</p>
+    </section>
+
+    <!-- KONTAK -->
+    <section class="wrap section" id="contact">
+      <div class="contact-panel reveal">
+        <p class="eyebrow">04 / <span data-i18n="contactLabel">KONTAK</span></p>
+        <h2 data-i18n="contactTitle">Mari terhubung.</h2>
+        <p class="muted" data-i18n="contactText">Terbuka untuk bertukar ide, belajar bersama, dan mengerjakan proyek kecil.</p>
+        <!-- GANTI EMAIL DI HREF -->
+        <a class="button primary" href="mailto:emailkamu@example.com" data-i18n="emailButton">Kirim email ↗</a>
+        <div class="terminal">
+          <span class="green-text">$</span>
+          <code>echo "Thanks for visiting!"</code>
+          <button id="copyButton" type="button" data-i18n="copyButton">Salin teks</button>
+        </div>
+        <p id="copyStatus" aria-live="polite"></p>
       </div>
     </section>
-
-    <section class="section reveal" id="projects">
-      <div class="section-heading">
-        <h2>▣ Proyek Unggulan</h2>
-        <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="blue">Lihat Semua Proyek ›</a>
-      </div>
-
-      <article class="project-card">
-        <div class="project-title">
-          <h3>Website Portofolio</h3>
-          <span class="blue">/projects/portfolio</span>
-        </div>
-        <button class="code-copy" data-copy="git clone https://github.com/USERNAME/comit-portfolio.git" type="button">
-          <span>$ git clone https://github.com/USERNAME/comit-portfolio.git</span>
-          <span>▢</span>
-        </button>
-        <p>Website portofolio pribadi untuk memperkenalkan diri dan menampilkan perjalanan belajar pemrograman.</p>
-        <div class="project-bottom">
-          <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
-          <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="blue">Buka ›</a>
-        </div>
-      </article>
-
-      <article class="project-card">
-        <div class="project-title">
-          <h3>Program Python</h3>
-          <span class="blue">/projects/python</span>
-        </div>
-        <p>Kumpulan latihan Python, mulai dari variabel, percabangan, perulangan, list, hingga fungsi.</p>
-        <div class="project-bottom">
-          <div class="tags"><span>Python</span><span>Beginner</span></div>
-          <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="blue">Buka ›</a>
-        </div>
-      </article>
-    </section>
-
-    <section class="section reveal" id="articles">
-      <div class="section-heading">
-        <h2>▤ Artikel Teknis Terbaru</h2>
-        <span class="blue">Catatan Belajar</span>
-      </div>
-      <article class="article-card">
-        <p class="blue">▤ belajar-html-css.md <span class="muted">◷ 3 min read</span></p>
-        <h3>Memulai Pengembangan Website dari Dasar</h3>
-        <p>Catatan perjalanan belajar HTML, CSS, dan JavaScript untuk membangun website pertama.</p>
-        <div class="tags"><span>#HTML</span><span>#CSS</span><span>#JavaScript</span></div>
-      </article>
-      <article class="article-card">
-        <p class="blue">▤ belajar-python.md <span class="muted">◷ 4 min read</span></p>
-        <h3>Belajar Logika Pemrograman dengan Python</h3>
-        <p>Ringkasan latihan variabel, percabangan, perulangan, list, dan fungsi.</p>
-        <div class="tags"><span>#Python</span><span>#Programming</span></div>
-      </article>
-    </section>
-
-    <section class="contact-card reveal" id="contact">
-      <h2>Punya ide proyek atau kebutuhan aplikasi?</h2>
-      <p>Saya terbuka untuk belajar bersama, berkolaborasi dalam proyek, dan mengeksplorasi hal teknis yang menantang.</p>
-      <a class="social primary email-button" href="mailto:emailkamu@example.com">✉ Kirim Email</a>
-      <a class="contact-link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">in Terhubung di LinkedIn</a>
-      <button class="contact-link" id="terminalBtn" type="button">›_ Buka Terminal Kontak</button>
-      <p id="contactTerminal" class="terminal hidden">deshan@dev:~$ echo "Email: emailkamu@example.com"</p>
-    </section>
-
-    <footer>
-      <span>© <span id="year"></span> Deshan</span>
-      <span>Dibuat dengan HTML, CSS & JavaScript</span>
-      <a href="#top" class="blue">Kembali ke atas ↑</a>
-    </footer>
   </main>
+
+  <footer class="wrap footer">
+    <a class="logo" href="#home">&lt;deshan<span>.dev</span> /&gt;</a>
+    <p>© <span id="year"></span> <span data-i18n="footerText">Dibuat dengan rasa ingin tahu.</span></p>
+    <a href="#home" data-i18n="backTop">Kembali ke atas ↑</a>
+  </footer>
 </body>
 </html>
