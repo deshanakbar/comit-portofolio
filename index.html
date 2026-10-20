@@ -9,6 +9,37 @@
   <script src="script.js" defer></script>
 </head>
 <body id="top">
+  <div id="intro-screen" class="intro-screen">
+  <div class="intro-window">
+    <div class="editor-heading">
+      <div class="window-dots">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+      </div>
+      <span>initializing_developer.exe</span>
+    </div>
+
+    <div class="intro-content">
+      <p class="comment">// Initializing developer portfolio...</p>
+      <h1 id="intro-title">Hello, Developer.</h1>
+      <p id="intro-subtitle">Preparing development environment</p>
+
+      <div class="intro-code">
+        <span class="terminal-user">visitor@portfolio:~$</span>
+        <span id="intro-language">Loading HTML...</span>
+        <span class="cursor">_</span>
+      </div>
+
+      <div class="progress-track">
+        <div id="intro-progress"></div>
+      </div>
+
+      <p class="comment" id="intro-status">Loading modules...</p>
+      <button id="skip-intro" type="button">Skip Intro →</button>
+    </div>
+  </div>
+</div>
   <header class="topbar">
     <div class="window-dots">
       <span class="dot red"></span>
@@ -17,7 +48,13 @@
     </div>
     <div class="file-title"><span class="blue">◆</span> id / home.tsx</div>
     <div class="top-actions">
-      <button id="languageBtn" class="small-btn" type="button">🌐 ID⌄</button>
+      <select id="languageSelect" class="small-btn" aria-label="Pilih bahasa">
+  <option value="id">🌐 Bahasa Indonesia</option>
+  <option value="en">🌐 English</option>
+  <option value="ja">🌐 日本語</option>
+  <option value="ko">🌐 한국어</option>
+  <option value="es">🌐 Español</option>
+</select>
       <button id="themeBtn" class="small-btn" type="button" aria-label="Ganti tema">☼</button>
     </div>
   </header>
@@ -122,12 +159,23 @@
           <span>tech_stack_loop.json</span>
           <span class="muted heading-right">hover untuk jeda</span>
         </div>
-        <div class="tech-list">
-          <div class="tech-item"><span class="tech-icon">🌐</span><strong>HTML</strong><small>Markup</small></div>
-          <div class="tech-item"><span class="tech-icon">🎨</span><strong>CSS</strong><small>Styling</small></div>
-          <div class="tech-item"><span class="tech-icon">JS</span><strong>JavaScript</strong><small>Language</small></div>
-          <div class="tech-item"><span class="tech-icon">🐍</span><strong>Python</strong><small>Language</small></div>
-          <div class="tech-item"><span class="tech-icon">⌘</span><strong>Git</strong><small>Version Control</small></div>
+
+          <div class="tech-marquee">
+        <div class="tech-track">
+    <div class="tech-item"><span class="tech-icon">🌐</span><strong>HTML</strong><small>Markup</small></div>
+    <div class="tech-item"><span class="tech-icon">🎨</span><strong>CSS</strong><small>Styling</small></div>
+    <div class="tech-item"><span class="tech-icon">JS</span><strong>JavaScript</strong><small>Language</small></div>
+    <div class="tech-item"><span class="tech-icon">TS</span><strong>TypeScript</strong><small>Language</small></div>
+    <div class="tech-item"><span class="tech-icon">⚛</span><strong>React</strong><small>Frontend</small></div>
+    <div class="tech-item"><span class="tech-icon">▲</span><strong>Next.js</strong><small>Framework</small></div>
+    <div class="tech-item"><span class="tech-icon">🐍</span><strong>Python</strong><small>Language</small></div>
+    <div class="tech-item"><span class="tech-icon">☕</span><strong>Java</strong><small>Language</small></div>
+    <div class="tech-item"><span class="tech-icon">⌘</span><strong>Git</strong><small>Version Control</small></div>
+    <div class="tech-item"><span class="tech-icon">🐙</span><strong>GitHub</strong><small>Repository</small></div>
+    <div class="tech-item"><span class="tech-icon">🗄</span><strong>SQL</strong><small>Database</small></div>
+    <div class="tech-item"><span class="tech-icon">🐧</span><strong>Linux</strong><small>Operating System</small></div>
+  </div>
+</div>
         </div>
         <div class="editor-footer">// Teknologi yang sedang saya pelajari</div>
       </div>
